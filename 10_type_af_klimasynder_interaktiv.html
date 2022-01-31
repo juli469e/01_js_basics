@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10</title>
+  </head>
+  <body>
+    <p>Indtast længden på din flyrejse i timer</p>
+    <input type="text" id="timer" />
+    <button>Se resultat i konsol</button>
+
+    <script>
+      let timer = document.querySelector("#timer").value;
+      let co2ud = 109;
+      total = timer * co2ud;
+
+      let resultat;
+
+      document.querySelector("button").addEventListener("click", buttonClicked);
+      function buttonClicked() {
+        if (isNaN(total)) {
+          resultat = "Det er ikke et tal. Prøv igen";
+        } else if (total < 100) {
+          resultat = `lvl1. Du har brugt ${total} kg CO2 på din rejse`;
+        } else if (total <= 200) {
+          resultat = `lvl2. Du har brugt ${total} kg CO2 på din rejse`;
+        } else if (total <= 600) {
+          resultat = `lvl3. Du har brugt ${total} kg CO2 på din rejse`;
+        } else {
+          resultat = `lvl4. Du har brugt ${total} kg CO2 på din rejse`;
+        }
+        console.log(resultat);
+      }
+    </script>
+  </body>
+</html>
